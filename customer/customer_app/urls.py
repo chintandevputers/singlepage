@@ -5,7 +5,9 @@ from .views import CustomerListCreateAPIView
 
 
 urlpatterns = [
-path('customers/', CustomerListCreateAPIView.as_view(), name='customer-list-create'),
-# path('customers/', views.getData),
-# path('customers/', views.postData),
+    path(
+        "customers/", CustomerListCreateAPIView.as_view(), name="customer-list-create"
+    ),
+    # path('customers/', views.getData),
+    # path('customers/', views.postData),
 ]
