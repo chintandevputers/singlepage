@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+
+  django:
+    container_name: django
+    build:
+      context: ./customer
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./customer:/app
+    ports:
+      - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=1292jffhh381911n1001
+      - ALLOWED_HOSTS=localhost,127.0.0.1,*
+
+  react:
+    container_name: react
+    build:
+      context: ./react-typescript-ui
+    volumes:
+      - ./react-typescript-ui:/app
+    ports:
+      - 3000:3000
