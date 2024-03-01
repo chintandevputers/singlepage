@@ -7,14 +7,14 @@ https://www.docker.com/get-started/
 clone repo from github
 
 # Go to project folder
-cd siglepage
+`cd siglepage`
 
 # create node modules
-cd singlepage\react-typescript-ui
-npm install
+cd singlepage\react-typescript-ui  
+`npm install`
 
 # run docker file
-run: docker-compose up -d --build
+run: `docker-compose up -d --build`
 
 # run project
 run on 3000 port
