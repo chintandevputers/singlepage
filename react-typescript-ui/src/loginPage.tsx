@@ -48,7 +48,6 @@ const LoginPage: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
             type: "text",
             placeholder: "Phone Number",
             label: "Phone Number",
-            pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
         },
     ];
 

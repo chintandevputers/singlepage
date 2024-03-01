@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './homePage.css';
 
 const PAGE_SIZE = 10; // Number of items per page
 
@@ -27,22 +28,20 @@ const HomePage: React.FC = () => {
     const nextPage = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
-            fetchData(); // Fetch data for the next page
         }
     };
 
     const prevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
-            fetchData(); // Fetch data for the previous page
         }
     };
 
     return (
-        <div>
+        <div className="home-page">
             <h2>Home Page</h2>
             {/* Display fetched data */}
-            <ul>
+            <ul className="user-list">
                 {data.map((user: any, index: number) => ( // Add type annotations for user and index
                     <li key={index}>
                         <p>ID: {user.customer_id}</p>
@@ -54,7 +53,7 @@ const HomePage: React.FC = () => {
                 ))}
             </ul>
             {/* Pagination controls */}
-            <div>
+            <div className="pagination-controls">
                 <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
                 <button onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
             </div>
